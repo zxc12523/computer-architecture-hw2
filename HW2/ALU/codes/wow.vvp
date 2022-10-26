@@ -1,0 +1,65 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55e7dee98160 .scope module, "add_signed_32bits" "add_signed_32bits" 2 42;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "overflow"
+    .port_info 1 /OUTPUT 32 "s"
+    .port_info 2 /INPUT 32 "a"
+    .port_info 3 /INPUT 32 "b"
+P_0x55e7dee982e0 .param/l "DATA_WIDTH" 0 2 42, +C4<00000000000000000000000000100000>;
+L_0x7f7699a66060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55e7deece590_0 .net *"_s10", 0 0, L_0x7f7699a66060;  1 drivers
+v0x55e7deee0170_0 .net *"_s11", 32 0, L_0x55e7deee1700;  1 drivers
+v0x55e7deee0250_0 .net *"_s3", 32 0, L_0x55e7deee1430;  1 drivers
+L_0x7f7699a66018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55e7deee0310_0 .net *"_s6", 0 0, L_0x7f7699a66018;  1 drivers
+v0x55e7deee03f0_0 .net *"_s7", 32 0, L_0x55e7deee1580;  1 drivers
+o0x7f7699aaf108 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x55e7deee0520_0 .net "a", 31 0, o0x7f7699aaf108;  0 drivers
+o0x7f7699aaf138 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x55e7deee0600_0 .net "b", 31 0, o0x7f7699aaf138;  0 drivers
+v0x55e7deee06e0_0 .net "o1", 0 0, L_0x55e7deee1290;  1 drivers
+o0x7f7699aaf198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55e7deee07a0_0 .net "overflow", 0 0, o0x7f7699aaf198;  0 drivers
+v0x55e7deee0860_0 .net "s", 31 0, L_0x55e7deee1360;  1 drivers
+L_0x55e7deee1290 .part L_0x55e7deee1700, 32, 1;
+L_0x55e7deee1360 .part L_0x55e7deee1700, 0, 32;
+L_0x55e7deee1430 .concat [ 32 1 0 0], o0x7f7699aaf108, L_0x7f7699a66018;
+L_0x55e7deee1580 .concat [ 32 1 0 0], o0x7f7699aaf138, L_0x7f7699a66060;
+L_0x55e7deee1700 .arith/sum 33, L_0x55e7deee1430, L_0x55e7deee1580;
+S_0x55e7deece370 .scope module, "add_unsigned_32bits" "add_unsigned_32bits" 2 30;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "overflow"
+    .port_info 1 /OUTPUT 32 "s"
+    .port_info 2 /INPUT 32 "a"
+    .port_info 3 /INPUT 32 "b"
+P_0x55e7deece4f0 .param/l "DATA_WIDTH" 0 2 30, +C4<00000000000000000000000000100000>;
+L_0x7f7699a660f0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55e7deee09c0_0 .net *"_s10", 0 0, L_0x7f7699a660f0;  1 drivers
+v0x55e7deee0ac0_0 .net *"_s11", 32 0, L_0x55e7deee1cd0;  1 drivers
+v0x55e7deee0ba0_0 .net *"_s3", 32 0, L_0x55e7deee19d0;  1 drivers
+L_0x7f7699a660a8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55e7deee0c60_0 .net *"_s6", 0 0, L_0x7f7699a660a8;  1 drivers
+v0x55e7deee0d40_0 .net *"_s7", 32 0, L_0x55e7deee1b20;  1 drivers
+o0x7f7699aaf3a8 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x55e7deee0e20_0 .net "a", 31 0, o0x7f7699aaf3a8;  0 drivers
+o0x7f7699aaf3d8 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x55e7deee0f00_0 .net "b", 31 0, o0x7f7699aaf3d8;  0 drivers
+v0x55e7deee0fe0_0 .net "overflow", 0 0, L_0x55e7deee1840;  1 drivers
+v0x55e7deee10a0_0 .net "s", 31 0, L_0x55e7deee18e0;  1 drivers
+L_0x55e7deee1840 .part L_0x55e7deee1cd0, 32, 1;
+L_0x55e7deee18e0 .part L_0x55e7deee1cd0, 0, 32;
+L_0x55e7deee19d0 .concat [ 32 1 0 0], o0x7f7699aaf3a8, L_0x7f7699a660a8;
+L_0x55e7deee1b20 .concat [ 32 1 0 0], o0x7f7699aaf3d8, L_0x7f7699a660f0;
+L_0x55e7deee1cd0 .arith/sum 33, L_0x55e7deee19d0, L_0x55e7deee1b20;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "wow.v";
