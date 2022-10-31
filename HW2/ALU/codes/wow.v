@@ -4,7 +4,7 @@ wire [31:0] a = 32'h00000003;
 wire [31:0] b = 32'h7ffffffd;
 
 wire [31:0] result[0:16];
-wire [16:0]  overflow;
+wire [16:0] overflow;
 
 add_signed_32bits       adds    (overflow[0], result[0], a, b);
 sub_signed_32bits       subs    (overflow[1], result[1], a, b);

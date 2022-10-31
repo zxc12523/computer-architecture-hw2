@@ -47,7 +47,7 @@ reverse_32bits          rev     (overflow[14], result[14], a);
 lt_signed_32bits        lts     (overflow[15], result[15], a, b);
 ge_signed_32bits        ges     (overflow[16], result[16], a, b);
 
-always @((i_inst or i_data_a or i_data_b) and posedge i_clk) begin
+always @(i_inst or i_data_a or i_data_b or posedge i_clk) begin
     
     case (i_inst)
         5'd0: begin tmp = result[0]; o = overflow[0]; v = 1; end
