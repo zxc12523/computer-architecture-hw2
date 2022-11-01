@@ -176,7 +176,7 @@ module float_rounder #(parameter DATA_WIDTH = 24
     assign rexs = tmpex;
     assign rfrs = tmps[DATA_WIDTH-1:0];
 
-    always @(s1 or ss or fr1_buf or frs) begin
+    always @(s1 or ss or fr1_buf or frs or exs) begin
 
         tmpex = exs;
         tmps = frs;
